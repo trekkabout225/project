@@ -1,0 +1,135 @@
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+main {
+    padding: 4px; 
+    color: #202020;
+    grid-area: main;
+}
+
+h1 {
+    text-align: center;
+    color: white;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+h2 {
+    text-align: center;
+    color: purple;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+footer {
+    background-color: #202020;
+    bottom: 0;
+    color: lightblue;
+    grid-area: footer;
+    left: 0;
+    width: 100%;
+    padding: 2px;
+    position: fixed;
+    text-align: center;
+}
+
+header {
+    align-items: center;
+    background-color: purple;
+    display: flex;
+    justify-content: center;
+    grid-area: header;
+}
+
+.image {
+    max-width: 100%;
+    max-height:100%;
+}
+
+.image .top-left {
+    display: block;
+    top: 8px;
+    left: 16px;
+}
+  
+.text {
+    font-size: 20px;
+    padding-left: 20px;
+}
+
+#recipe {
+    border: 1px solid #808080;
+    padding: 2px;
+    margin: 8px;
+    border-radius: 8px;
+    height: 300px;
+    max-width: 300px;
+}
+
+.recipes {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    border: inset;
+    margin-bottom: 4px;
+    padding: 4px;
+    background-color: white;
+    color: #222;
+}
+
+.recipes .title {
+    font-weight: bold;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: inset;
+    margin-bottom: 4px;
+    padding: 4px;
+    background-color: white;
+    color: #222;
+}
+
+.container-detail {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    height: 50px;
+    max-width: 350px;
+}
+
+.container-detail-form {
+    padding-left: 15px;
+    padding-bottom: 10px;
+    display: inline-flex;
+    justify-content: left;
+    flex-direction: column;
+    height: 50px;
+    max-width: 350px;
+}
+
+.nav {
+    align-items: center;
+}
+
+.nav li {
+    background-color: purple;
+    display: inline;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: 8px;
+}
+
+.nav li a {
+    color: rgb(234, 233, 233) !important;
+    text-decoration: none;
+}
+
+.nav li.active {
+    background-color: rgb(134, 65, 134);
+}
+
+
+
