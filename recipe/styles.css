@@ -186,7 +186,7 @@ label[for="search-box"] {
 }
 
 .image-list {
-    /* position: relative; */
+    position: relative;
     display: inline-flex;
     width: 50%;
     align-items: center;
