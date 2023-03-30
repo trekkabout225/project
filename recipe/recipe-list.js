@@ -51,7 +51,7 @@ function displayRecipes() {
             <p class="image-title">${val.title}</p>
         </ul>
         <p><strong>Ingredients:</strong></p>
-        <ul>${val.description}</ul>
+        <ul class="ingredient-styles">${val.description}</ul>
         <br/>
         <hr>`;
     });

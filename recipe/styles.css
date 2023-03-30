@@ -131,9 +131,9 @@ button[type="button"] {
 #no-recipes {
   display: flex;
   background-color: #FFCCCC;
-  padding: 20px;
+  padding: 10px;
   border-radius: 8px;	
-	margin-top: 44px;
+	margin-top: 22px;
 }
 
 /* styling for single recipe div */
@@ -183,6 +183,12 @@ label[for="search-box"] {
   max-width: 100%;
   width: 600px;
   margin: 0 auto;
+}
+
+.ingredient-styles {
+  margin: 15px 0 0 45px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
 }
 
 .image-list {
