@@ -70,12 +70,15 @@ function displayRecipes() {
 	// Create div to display the individual recipe, for each recipe
     recipeDiv.innerHTML = `
       <h3>${recipe.name}</h3>
+      <br/>
       <p><strong>Ingredients:</strong></p>
       <ul>
         ${recipe.ingredients.map(ingr => `<li>${ingr}</li>`).join('')}
       </ul>
+      <br/>
       <p><strong>Method:</strong></p>
       <p>${recipe.method}</p>
+      <br/>
       <button class="delete-button" data-index="${index}">Delete</button>`;
     recipeDiv.classList.add('recipe');
     recipeList.appendChild(recipeDiv);

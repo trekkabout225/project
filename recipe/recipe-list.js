@@ -15,11 +15,11 @@ let data = {
                 },
                 {
                     "content_type": "article",
-                    "description": ["<li>226 grams fettuccine (- ½ pound)</li>",
-                                    "<li>6 cups water</li>",
-                                    "<li>1 to 1.5 teaspoons salt (or add as required)</li>",
-                                    "<li>3 to 4 tablespoons Butter (- 30 grams, unsalted or salted)</li>",
-                                    "<li>½ teaspoon garlic (- finely chopped)</li>"],
+                    "description": ["<li>1 tablespoon butter</li>",
+                                    "<li>2 tablespoons olive oil</li>",
+                                    "<li>1 onion (chopped)</li>",
+                                    "<li>1 (26-ounce) jar tomato pasta sauce (or homemade )</li>",
+                                    "<li>3 tablespoons water</li>"],
                     "image_url": ["/img/bolognese.jpg"],
                     "title": "bolognese"
                 },
@@ -51,6 +51,8 @@ function displayRecipes() {
             <p class="image-title">${val.title}</p>
         </ul>
         <p><strong>Ingredients:</strong></p>
-        <ul>${val.description}</ul>`;
+        <ul>${val.description}</ul>
+        <br/>
+        <hr>`;
     });
 }
