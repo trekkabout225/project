@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Recipe App</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1 id="nav-title"><a href="#">Recipe World</a></h1>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="recipe-list.html">Recipes</a></li>
+          <li><a href="contact.html">Suggest</a></li>
+          <li><input type="text" id="search-box" /></li>
+        </ul>
+      </nav>
+    </header>
+
+    <div class="container">
+      <!-- Recipe List -->
+      <div class="middle-column">
+        <h2>Current Recipes</h2>
+        <br/>
+        <button type="button" onclick="displayRecipes()">Show List</button>
+      </div>
+      <div id="target"></div>
+    </div>
+    <footer>&copy; Copyright 2023 - Recipe World - Robert Stephens</footer>
+    <script src="recipe-list.js"></script>
+  </body>
+</html>

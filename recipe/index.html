@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Recipe App</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1 id="nav-title"><a href="#">Recipe World</a></h1>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="recipe-list.html">Recipes</a></li>
+          <li><a href="contact.html">Suggest</a></li>
+          <li><input type="text" id="search-box" /></li>
+        </ul>
+      </nav>
+    </header>
+    <div class="container">
+      <!-- Add recipes form -->
+      <div class="left-column">
+        <h3>Add Recipe</h3>
+        <br />
+        <form>
+          <label for="recipe-name">Name: </label>
+          <input type="text" id="recipe-name" required />
+          <br />
+          <label for="recipe-ingredients">Ingredients: </label>
+          <textarea id="recipe-ingredients" rows="5" required></textarea>
+          <br />
+          <label for="recipe-method">Method: </label>
+          <textarea id="recipe-method" rows="5" required></textarea>
+          <br />
+          <button type="submit">Add Recipe</button>
+        </form>
+      </div>
+      <!-- Recipes list -->
+      <div class="right-column">
+          <h3>Recipes List</h3>
+          <br/>
+        <div id="recipe-list"></div>
+        <div id="no-recipes">You have no recipes.</div>
+      </div>
+    </div>
+    <footer>&copy; Copyright 2023 - Recipe World - Robert Stephens</footer>
+    <script src="script.js"></script>
+  </body>
+</html>

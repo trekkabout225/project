@@ -1,0 +1,224 @@
+
+/* Global styling */
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica;
+}
+
+/* Styling for the page */
+body {
+  font-family: sans-serif;
+}
+
+/* Header */
+header {
+
+  /* background-color: purple;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 20px;
+  left: 0;
+  color: white;
+  text-align: center; */
+
+
+  background-color: purple;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 20px 50px;
+  box-shadow: 0 1px 8px #ddd;
+}
+
+footer {
+  background-color: #202020;
+  bottom: 0;
+  color: lightblue;
+  grid-area: footer;
+  left: 0;
+  width: 100%;
+  padding: 2px;
+  position: fixed;
+  text-align: center;
+}
+
+#nav-title {
+  margin-right: auto;
+  font-size: 1.5em;
+}
+
+header li {
+  color: white;
+  list-style: none;
+  display: inline-block;
+  padding: 0 20px;
+}
+
+header a {
+  color: white;
+  text-decoration: none;
+  transition: all 0.3s ease 0s;
+}
+
+header a:hover {
+  color: #b2dfdb;
+}
+
+.nav {
+  align-items: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 150px 5%;
+}
+
+.left-column {
+  width: 40%;
+  justify-content: flex-start;
+}
+
+.middle-column {
+  width: 50%;
+  align-items: center;
+  justify-content: center;
+}
+
+.right-column {
+  width: 40%;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+/* Styling for the Add Recipes form */
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-bottom: 10px;
+}
+
+input[type="text"], textarea {
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+button[type="submit"] {
+  padding: 10px;
+  background-color: orange;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button[type="button"] {
+  padding: 10px;
+  background-color: blue;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Styling for list of recipes */
+#recipe-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 20px;
+}
+
+#no-recipes {
+  display: flex;
+  background-color: #FFCCCC;
+  padding: 20px;
+  border-radius: 8px;	
+	margin-top: 44px;
+}
+
+/* styling for single recipe div */
+.recipe {
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0,0,0,.2);
+}
+
+.recipe h3 {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.recipe ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.recipe ul li {
+  margin-bottom: 5px;
+}
+
+/* Delete button styling */
+.delete-button {
+  background-color: #dc3545;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.delete-button:hover {
+  background-color: #c82333;
+}
+
+/* Search label styling */
+label[for="search-box"] {
+  display: block;
+  margin-bottom: 10px;
+}
+
+#target {
+  max-width: 100%;
+  width: 600px;
+  margin: 0 auto;
+}
+
+.image-list {
+    position: relative;
+    /* float: left; */
+    display: inline-flex;
+    width: 50%;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.image-styles {
+    margin: 15px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+}
+
+.image-title {
+    background: #000;
+    width: 100%;
+    position: absolute;
+    bottom: 15px;
+    left: 22px;
+    color: #f7f7f7;
+    text-align: center;
+    padding: 2px;
+    opacity: 0.6;
+    filter: alpha(opacity=60);
+}
