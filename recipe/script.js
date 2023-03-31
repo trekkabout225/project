@@ -1,3 +1,6 @@
+// import data from './db.json' assert { type: 'JSON' };
+// console.log(data);
+
 // Get DOM elements
 const form = document.querySelector('form');
 const recipeList = document.querySelector('#recipe-list');
@@ -6,13 +9,17 @@ const noRecipes = document.getElementById('no-recipes');
 
 // Define recipes array
 
+// fetch json data
+// fetch('./db.json')
+//     .then((response) => response.json())
+//     .then((json) => console.log(json))
 
 // let recipes = []
 // let recipes = ['db.json'];
 let recipes = [
         {
           "name": "Baked Rigatoni",
-          "image_url": "/img/baked-rigitoni.jpg",
+          "imageUrl": "/img/baked-rigitoni.jpg",
           "ingredients": ["<li>1 tablespoon butter</li>",
                           "<li>2 tablespoons olive oil</li>",
                           "<li>1 onion (chopped)</li>",
@@ -22,7 +29,7 @@ let recipes = [
         },
         {
           "name": "Bolognese",
-          "image_url": "/img/bolognese.jpg",
+          "imageUrl": "/img/bolognese.jpg",
           "ingredients": ["<li>1 tablespoon butter</li>",
                           "<li>2 tablespoons olive oil</li>",
                           "<li>1 onion (chopped)</li>",
@@ -32,7 +39,7 @@ let recipes = [
         },
         {
           "name": "Fettuccine Alfredo",
-          "image_url": "/img/fettuccine-alfredo.jpg",
+          "imageUrl": "/img/fettuccine-alfredo.jpg",
           "ingredients": ["<li>226 grams fettuccine (- ½ pound)</li>",
                           "<li>6 cups water</li>",
                           "<li>1 to 1.5 teaspoons salt (or add as required)</li>",
@@ -56,22 +63,28 @@ function addRecipe(event) {
   const ingredients = ingredientsInput.value.trim().split(',').map(i => i.trim());
   const directions = directionsInput.value.trim();
   
-  // Check if recipe name, ingredients, and method are valid
-  if (name && imageInput && ingredients.length > 0 && directions) {
+  // Check if recipe name, image, ingredients, and directions are valid
+  // if (name && imageInput && ingredients.length > 0 && directions) {
     // Create new recipe object and add it to recipes array
-    const newRecipe = { name, ingredients, directions };
-    recipes.push(newRecipe);
-    
-    // Clear form inputs
-    nameInput.value = '';
-    imageInput.value = '';
-    ingredientsInput.value = '';
-    directionsInput.value = '';
-    
+    const reader = new FileReader();
+    reader.onload = () => {
+      const imageUrl = reader.result;
+      const newRecipe = { name, imageUrl, ingredients, directions };
+      recipes.push(newRecipe);
+      
+      // Clear form inputs
+      nameInput.value = '';
+      imageInput.value = '';
+      ingredientsInput.value = '';
+      directionsInput.value = '';
+      
     // Add new recipe to recipe list
     displayRecipes();
-  }
+    };
+    reader.readAsDataURL(imageInput.files[0]);
+  // }
 }
+
 
 // Display recipes in recipe list
 function displayRecipes() {
@@ -81,7 +94,7 @@ function displayRecipes() {
 	// Create div to display the individual recipe, for each recipe
     recipeDiv.innerHTML = `
       <h3>${recipe.name}</h3>
-      <p><img src="${recipe.image_url}" class="image-styles" /></p>
+      <p><img src="${recipe.imageUrl}" class="image-styles" /></p>
       <br/>
       <p><strong>Ingredients:</strong></p>
       <ul>
@@ -98,9 +111,9 @@ function displayRecipes() {
 
   // Display warning when there are no recipes in the list
   if (recipes.length > 0) {
-	noRecipes.style.display = 'none';
+	  noRecipes.style.display = 'none';
   } else {
-	noRecipes.style.display = 'flex';
+	  noRecipes.style.display = 'flex';
   }
 }
 
@@ -124,7 +137,7 @@ function search(query) {
     const recipeEl = document.createElement('div');
     recipeEl.innerHTML = `
       <h3>${recipe.name}</h3>
-      <p><img src ="${recipe.image_url}" class="image-styles" /></p>
+      <p><img src ="${recipe.imageUrl}" class="image-styles" /></p>
       <br/>
       <br/>
       <p><strong>Ingredients:</strong></p>
