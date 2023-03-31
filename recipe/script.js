@@ -2,14 +2,13 @@
 const form = document.querySelector('form');
 const recipeList = document.querySelector('#recipe-list');
 const searchBox = document.getElementById('search-box');
-// const imageUpload = document.getElementById('image-input');
 const noRecipes = document.getElementById('no-recipes');
 
 // Define recipes array
 
 
 // let recipes = []
-// let recipes = JSON.parse('/db.json');
+// let recipes = JSON.parse('./db.json');
 let recipes = [
         {
           "name": "Baked Rigatoni",
@@ -150,5 +149,4 @@ displayRecipes();
 // Add event listeners
 form.addEventListener('submit', handleSubmit);
 recipeList.addEventListener('click', handleDelete);
-// imageUpload.addEventListener('input', event => displayRecipes(event.target.value));
 searchBox.addEventListener('input', event => search(event.target.value));
