@@ -2,7 +2,7 @@
 const form = document.querySelector('form');
 const recipeList = document.querySelector('#recipe-list');
 const searchBox = document.getElementById('search-box');
-const imageUpload = document.getElementById('image-input');
+// const imageUpload = document.getElementById('image-input');
 const noRecipes = document.getElementById('no-recipes');
 
 // Define recipes array
@@ -13,7 +13,7 @@ const noRecipes = document.getElementById('no-recipes');
 let recipes = [
         {
           "name": "Baked Rigatoni",
-          "image_url": ["/img/baked-rigitoni.jpg"],
+          "image_url": "/img/baked-rigitoni.jpg",
           "ingredients": ["<li>1 tablespoon butter</li>",
                           "<li>2 tablespoons olive oil</li>",
                           "<li>1 onion (chopped)</li>",
@@ -23,7 +23,7 @@ let recipes = [
         },
         {
           "name": "Bolognese",
-          "image_url": ["/img/bolognese.jpg"],
+          "image_url": "/img/bolognese.jpg",
           "ingredients": ["<li>1 tablespoon butter</li>",
                           "<li>2 tablespoons olive oil</li>",
                           "<li>1 onion (chopped)</li>",
@@ -33,7 +33,7 @@ let recipes = [
         },
         {
           "name": "Fettuccine Alfredo",
-          "image_url": ["/img/fettuccine-alfredo.jpg"],
+          "image_url": "/img/fettuccine-alfredo.jpg",
           "ingredients": ["<li>226 grams fettuccine (- ½ pound)</li>",
                           "<li>6 cups water</li>",
                           "<li>1 to 1.5 teaspoons salt (or add as required)</li>",
@@ -48,7 +48,7 @@ function handleSubmit(event) {
   // Prevent default form submission behavior
   event.preventDefault();
   
-  // Get recipe name, ingredients, and method input values
+  // Get recipe name, ingredients, image (if uploaded), and method input values
   const nameInput = document.querySelector('#recipe-name');
   const imageInput = document.querySelector('#image-name');
   const ingrInput = document.querySelector('#recipe-ingredients');
@@ -150,5 +150,5 @@ displayRecipes();
 // Add event listeners
 form.addEventListener('submit', handleSubmit);
 recipeList.addEventListener('click', handleDelete);
-imageUpload.addEventListener('input', event => displayRecipes(event.target.value));
+// imageUpload.addEventListener('input', event => displayRecipes(event.target.value));
 searchBox.addEventListener('input', event => search(event.target.value));
