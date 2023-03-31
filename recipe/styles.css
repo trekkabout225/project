@@ -107,7 +107,7 @@ label {
 }
 
 input[type="text"], textarea {
-  display: inline-flex;
+  /* display: inline-flex; */
   padding: 10px;
   margin-bottom: 10px;
   border-radius: 5px;
@@ -116,7 +116,7 @@ input[type="text"], textarea {
   box-sizing: border-box;
 }
 
-input.nosubmit[type="text"] {
+input.nosubmit {
   width: 260px;
   border: 1px solid #555;
   display: block;
