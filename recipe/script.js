@@ -8,7 +8,7 @@ const noRecipes = document.getElementById('no-recipes');
 
 
 // let recipes = []
-// let recipes = JSON.parse('./db.json');
+// let recipes = ['db.json'];
 let recipes = [
         {
           "name": "Baked Rigatoni",
@@ -43,7 +43,7 @@ let recipes = [
 ];
 
 // Handle form submit
-function handleSubmit(event) {
+function addRecipe(event) {
   // Prevent default form submission behavior
   event.preventDefault();
   
@@ -85,7 +85,7 @@ function displayRecipes() {
       <br/>
       <p><strong>Ingredients:</strong></p>
       <ul>
-        ${recipe.ingredients.map(ingr => `<li>${ingr}</li>`).join('')}
+        ${recipe.ingredients.map(ingredient => `<li>${ingredient}</li>`).join('')}
       </ul>
       <br/>
       <p><strong>Directions:</strong></p>
@@ -105,7 +105,7 @@ function displayRecipes() {
 }
 
 // Handle recipe deletion
-function handleDelete(event) {
+function deleteRecipe(event) {
   if (event.target.classList.contains('delete-button')) {
     const index = event.target.dataset.index;
     recipes.splice(index, 1);
@@ -129,7 +129,7 @@ function search(query) {
       <br/>
       <p><strong>Ingredients:</strong></p>
       <ul>
-        ${recipe.ingredients.map(ingr => `<li>${ingr}</li>`).join('')}
+        ${recipe.ingredients.map(ingredient => `<li>${ingredient}</li>`).join('')}
       </ul>
       <br/>
       <p><strong>Directions:</strong></p>
@@ -146,6 +146,6 @@ function search(query) {
 displayRecipes();
 
 // Add event listeners
-form.addEventListener('submit', handleSubmit);
-recipeList.addEventListener('click', handleDelete);
+form.addEventListener('submit', addRecipe);
+recipeList.addEventListener('click', deleteRecipe);
 searchBox.addEventListener('input', event => search(event.target.value));
