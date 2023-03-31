@@ -17,7 +17,7 @@ let recipes = [
                           "<li>1 onion (chopped)</li>",
                           "<li>1 (26-ounce) jar tomato pasta sauce (or homemade )</li>",
                           "<li>3 tablespoons water</li>"],
-          "method": ""
+          "method": "<p>Lorem ipsum dolor sit amet. Sed</p><p> numquam aspernatur et facilispossimus</p><p> nam autem expedita id obcaecati</p> repellendus eos culpa earum."
         },
         {
           "name": "Bolognese",
@@ -27,7 +27,7 @@ let recipes = [
                           "<li>1 onion (chopped)</li>",
                           "<li>1 (26-ounce) jar tomato pasta sauce (or homemade )</li>",
                           "<li>3 tablespoons water</li>"],
-          "method": ""
+          "method": "<p>Lorem ipsum dolor sit amet. Sed</p><p> numquam aspernatur et facilispossimus</p><p> nam autem expedita id obcaecati</p> repellendus eos culpa earum."
         },
         {
           "name": "Fettuccine Alfredo",
@@ -37,7 +37,7 @@ let recipes = [
                           "<li>1 to 1.5 teaspoons salt (or add as required)</li>",
                           "<li>3 to 4 tablespoons Butter (- 30 grams, unsalted or salted)</li>",
                           "<li>½ teaspoon garlic (- finely chopped)</li>"],
-          "method": ""
+          "method": "<p>Lorem ipsum dolor sit amet. Sed</p><p> numquam aspernatur et facilispossimus</p><p> nam autem expedita id obcaecati</p> repellendus eos culpa earum."
         }
 ];
 
