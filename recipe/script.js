@@ -1,9 +1,9 @@
 // Get DOM elements
 const form = document.querySelector('form');
 const recipeList = document.querySelector('#recipe-list');
-const noRecipes = document.getElementById('no-recipes');
 const searchBox = document.getElementById('search-box');
-const currentList = document.querySelector('#target');
+const imageUpload = document.getElementById('image-input');
+const noRecipes = document.getElementById('no-recipes');
 
 // Define recipes array
 
@@ -150,4 +150,5 @@ displayRecipes();
 // Add event listeners
 form.addEventListener('submit', handleSubmit);
 recipeList.addEventListener('click', handleDelete);
+imageUpload.addEventListener('input', event => displayRecipes(event.target.value));
 searchBox.addEventListener('input', event => search(event.target.value));
