@@ -18,7 +18,7 @@ let recipes = [
                           "<li>1 onion (chopped)</li>",
                           "<li>1 (26-ounce) jar tomato pasta sauce</li>",
                           "<li>3 tablespoons water</li>"],
-          "method": "<p>Lorem ipsum dolor sit amet. Sed</p><p> numquam aspernatur et facilispossimus</p><p> nam autem expedita id obcaecati</p> repellendus eos culpa earum."
+          "directions": "<p>Lorem ipsum dolor sit amet. Sed</p><p> numquam aspernatur et facilispossimus</p><p> nam autem expedita id obcaecati</p> repellendus eos culpa earum."
         },
         {
           "name": "Bolognese",
@@ -28,7 +28,7 @@ let recipes = [
                           "<li>1 onion (chopped)</li>",
                           "<li>1 (26-ounce) jar tomato pasta sauce</li>",
                           "<li>3 tablespoons water</li>"],
-          "method": "<p>Lorem ipsum dolor sit amet. Sed</p><p> numquam aspernatur et facilispossimus</p><p> nam autem expedita id obcaecati</p> repellendus eos culpa earum."
+          "directions": "<p>Lorem ipsum dolor sit amet. Sed</p><p> numquam aspernatur et facilispossimus</p><p> nam autem expedita id obcaecati</p> repellendus eos culpa earum."
         },
         {
           "name": "Fettuccine Alfredo",
@@ -38,7 +38,7 @@ let recipes = [
                           "<li>1 to 1.5 teaspoons salt (or add as required)</li>",
                           "<li>3 to 4 tablespoons Butter (unsalted or salted)</li>",
                           "<li>½ teaspoon garlic (- finely chopped)</li>"],
-          "method": "<p>Lorem ipsum dolor sit amet. Sed</p><p> numquam aspernatur et facilispossimus</p><p> nam autem expedita id obcaecati</p> repellendus eos culpa earum."
+          "directions": "<p>Lorem ipsum dolor sit amet. Sed</p><p> numquam aspernatur et facilispossimus</p><p> nam autem expedita id obcaecati</p> repellendus eos culpa earum."
         }
 ];
 
@@ -50,23 +50,23 @@ function handleSubmit(event) {
   // Get recipe name, ingredients, image (if uploaded), and method input values
   const nameInput = document.querySelector('#recipe-name');
   const imageInput = document.querySelector('#image-name');
-  const ingrInput = document.querySelector('#recipe-ingredients');
-  const methodInput = document.querySelector('#recipe-method');
+  const ingredientsInput = document.querySelector('#recipe-ingredients');
+  const directionsInput = document.querySelector('#recipe-directions');
   const name = nameInput.value.trim();
-  const ingredients = ingrInput.value.trim().split(',').map(i => i.trim());
-  const method = methodInput.value.trim();
+  const ingredients = ingredientsInput.value.trim().split(',').map(i => i.trim());
+  const directions = directionsInput.value.trim();
   
   // Check if recipe name, ingredients, and method are valid
-  if (name && ingredients.length > 0 && imageInput && method) {
+  if (name && imageInput && ingredients.length > 0 && directions) {
     // Create new recipe object and add it to recipes array
-    const newRecipe = { name, ingredients, method };
+    const newRecipe = { name, ingredients, directions };
     recipes.push(newRecipe);
     
     // Clear form inputs
     nameInput.value = '';
     imageInput.value = '';
-    ingrInput.value = '';
-    methodInput.value = '';
+    ingredientsInput.value = '';
+    directionsInput.value = '';
     
     // Add new recipe to recipe list
     displayRecipes();
@@ -88,8 +88,8 @@ function displayRecipes() {
         ${recipe.ingredients.map(ingr => `<li>${ingr}</li>`).join('')}
       </ul>
       <br/>
-      <p><strong>Method:</strong></p>
-      <p>${recipe.method}</p>
+      <p><strong>Directions:</strong></p>
+      <p>${recipe.directions}</p>
       <br/>
       <button class="delete-button" data-index="${index}">Delete</button>`;
     recipeDiv.classList.add('recipe');
@@ -99,8 +99,7 @@ function displayRecipes() {
   // Display warning when there are no recipes in the list
   if (recipes.length > 0) {
 	noRecipes.style.display = 'none';
-  }
-  else {
+  } else {
 	noRecipes.style.display = 'flex';
   }
 }
@@ -133,8 +132,8 @@ function search(query) {
         ${recipe.ingredients.map(ingr => `<li>${ingr}</li>`).join('')}
       </ul>
       <br/>
-      <p><strong>Method:</strong></p>
-      <p>${recipe.method}</p>
+      <p><strong>Directions:</strong></p>
+      <p>${recipe.directions}</p>
       <br/>
       <button class="delete-button" data-index="${recipes.indexOf(recipe)}">
 		Delete
