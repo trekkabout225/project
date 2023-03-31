@@ -21,23 +21,6 @@ header {
   box-shadow: 0 1px 8px #ddd;
 }
 
-footer {
-  background-color: #202020;
-  bottom: 0;
-  color: lightblue;
-  grid-area: footer;
-  left: 0;
-  width: 100%;
-  padding: 2px;
-  position: fixed;
-  text-align: center;
-}
-
-#nav-title {
-  margin-right: auto;
-  font-size: 1.5em;
-}
-
 header li {
   color: white;
   list-style: none;
@@ -53,6 +36,35 @@ header a {
 
 header a:hover {
   color: #b2dfdb;
+}
+
+footer {
+  background-color: #202020;
+  bottom: 0;
+  color: lightblue;
+  grid-area: footer;
+  left: 0;
+  width: 100%;
+  padding: 2px;
+  position: fixed;
+  text-align: center;
+}
+
+h1 {
+  text-align: center;
+  color: white;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+h2 {
+  text-align: center;
+  color: purple;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+#nav-title {
+  margin-right: auto;
+  font-size: 1.5em;
 }
 
 .nav {
@@ -95,6 +107,7 @@ label {
 }
 
 input[type="text"], textarea {
+  display: inline-flex;
   padding: 10px;
   margin-bottom: 10px;
   border-radius: 5px;
@@ -179,12 +192,6 @@ button[type="button"] {
 
 .delete-button:hover {
   background-color: #c82333;
-}
-
-/* Search label styling */
-label[for="search-box"] {
-  display: block;
-  margin-bottom: 10px;
 }
 
 #target {

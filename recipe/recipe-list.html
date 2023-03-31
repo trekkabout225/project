@@ -15,7 +15,11 @@
           <li><a href="index.html">Home</a></li>
           <li><a href="recipe-list.html">Recipes</a></li>
           <li><a href="contact.html">Suggest</a></li>
-          <li><input type="text" id="search-box" /></li>
+          <li>
+            <form class="nosubmit">
+              <input class="nosubmit" type="text" id="search-box" />
+            </form>
+          </li>
         </ul>
       </nav>
     </header>
@@ -24,8 +28,6 @@
       <!-- Recipe List -->
       <div class="middle-column">
         <h2>Current Recipes</h2>
-        <br/>
-        <button type="button" onclick="displayRecipes()">Show List</button>  
       <div id="target"></div>
     </div>
     </div>

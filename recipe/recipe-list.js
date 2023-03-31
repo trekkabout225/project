@@ -56,3 +56,5 @@ function displayRecipes() {
         <hr>`;
     });
 }
+
+displayRecipes();
