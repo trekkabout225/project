@@ -162,6 +162,11 @@ button[type="button"] {
 	margin-top: 22px;
 }
 
+#recipe-ingredients,
+#recipe-methods {
+  white-space: pre-wrap;
+}
+
 /* styling for single recipe div */
 .recipe {
   border: 1px solid #ccc;

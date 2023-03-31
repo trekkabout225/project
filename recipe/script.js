@@ -7,7 +7,9 @@ const currentList = document.querySelector('#target');
 
 // Define recipes array
 
+
 // let recipes = []
+// let recipes = JSON.parse('/db.json');
 let recipes = [
         {
           "name": "Baked Rigatoni",
@@ -15,7 +17,7 @@ let recipes = [
           "ingredients": ["<li>1 tablespoon butter</li>",
                           "<li>2 tablespoons olive oil</li>",
                           "<li>1 onion (chopped)</li>",
-                          "<li>1 (26-ounce) jar tomato pasta sauce (or homemade )</li>",
+                          "<li>1 (26-ounce) jar tomato pasta sauce</li>",
                           "<li>3 tablespoons water</li>"],
           "method": "<p>Lorem ipsum dolor sit amet. Sed</p><p> numquam aspernatur et facilispossimus</p><p> nam autem expedita id obcaecati</p> repellendus eos culpa earum."
         },
@@ -25,7 +27,7 @@ let recipes = [
           "ingredients": ["<li>1 tablespoon butter</li>",
                           "<li>2 tablespoons olive oil</li>",
                           "<li>1 onion (chopped)</li>",
-                          "<li>1 (26-ounce) jar tomato pasta sauce (or homemade )</li>",
+                          "<li>1 (26-ounce) jar tomato pasta sauce</li>",
                           "<li>3 tablespoons water</li>"],
           "method": "<p>Lorem ipsum dolor sit amet. Sed</p><p> numquam aspernatur et facilispossimus</p><p> nam autem expedita id obcaecati</p> repellendus eos culpa earum."
         },
@@ -35,49 +37,11 @@ let recipes = [
           "ingredients": ["<li>226 grams fettuccine (- ½ pound)</li>",
                           "<li>6 cups water</li>",
                           "<li>1 to 1.5 teaspoons salt (or add as required)</li>",
-                          "<li>3 to 4 tablespoons Butter (- 30 grams, unsalted or salted)</li>",
+                          "<li>3 to 4 tablespoons Butter (unsalted or salted)</li>",
                           "<li>½ teaspoon garlic (- finely chopped)</li>"],
           "method": "<p>Lorem ipsum dolor sit amet. Sed</p><p> numquam aspernatur et facilispossimus</p><p> nam autem expedita id obcaecati</p> repellendus eos culpa earum."
         }
 ];
-
-// let data = {
-//   "response": {
-//       "docs": [
-//           {
-//               "content_type": "article",
-//               "description": ["<li>1 tablespoon butter</li>",
-//                               "<li>2 tablespoons olive oil</li>",
-//                               "<li>1 onion (chopped)</li>",
-//                               "<li>1 (26-ounce) jar tomato pasta sauce (or homemade )</li>",
-//                               "<li>3 tablespoons water</li>"],
-//               "image_url": ["/img/baked-rigitoni.jpg"],
-//               "title": "baked-rigitoni"
-//           },
-//           {
-//               "content_type": "article",
-//               "description": ["<li>1 tablespoon butter</li>",
-//                               "<li>2 tablespoons olive oil</li>",
-//                               "<li>1 onion (chopped)</li>",
-//                               "<li>1 (26-ounce) jar tomato pasta sauce (or homemade )</li>",
-//                               "<li>3 tablespoons water</li>"],
-//               "image_url": ["/img/bolognese.jpg"],
-//               "title": "bolognese"
-//           },
-//           {
-//               "content_type": "article",
-//               "description": ["<li>226 grams fettuccine (- ½ pound)</li>",
-//                               "<li>6 cups water</li>",
-//                               "<li>1 to 1.5 teaspoons salt (or add as required)</li>",
-//                               "<li>3 to 4 tablespoons Butter (- 30 grams, unsalted or salted)</li>",
-//                               "<li>½ teaspoon garlic (- finely chopped)</li>"],
-//               "image_url": ["/img/fettuccine-alfredo.jpg"],
-//               "title": "fettuccine-alfredo"
-//           }
-//       ]
-//   }
-// };
-
 
 // Handle form submit
 function handleSubmit(event) {
@@ -118,7 +82,7 @@ function displayRecipes() {
 	// Create div to display the individual recipe, for each recipe
     recipeDiv.innerHTML = `
       <h3>${recipe.name}</h3>
-      <p><img src ="${recipe.image_url}" class="image-styles" /></p>
+      <p><img src="${recipe.image_url}" class="image-styles" /></p>
       <br/>
       <p><strong>Ingredients:</strong></p>
       <ul>
