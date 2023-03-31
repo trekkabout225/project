@@ -6,7 +6,40 @@ const searchBox = document.getElementById('search-box');
 const currentList = document.querySelector('#target');
 
 // Define recipes array
-let recipes = [];
+
+// let recipes = []
+let recipes = [
+        {
+          "name": "Baked Rigatoni",
+          "image_url": ["/img/baked-rigitoni.jpg"],
+          "ingredients": ["<li>1 tablespoon butter</li>",
+                          "<li>2 tablespoons olive oil</li>",
+                          "<li>1 onion (chopped)</li>",
+                          "<li>1 (26-ounce) jar tomato pasta sauce (or homemade )</li>",
+                          "<li>3 tablespoons water</li>"],
+          "method": ""
+        },
+        {
+          "name": "Bolognese",
+          "image_url": ["/img/bolognese.jpg"],
+          "ingredients": ["<li>1 tablespoon butter</li>",
+                          "<li>2 tablespoons olive oil</li>",
+                          "<li>1 onion (chopped)</li>",
+                          "<li>1 (26-ounce) jar tomato pasta sauce (or homemade )</li>",
+                          "<li>3 tablespoons water</li>"],
+          "method": ""
+        },
+        {
+          "name": "Fettuccine Alfredo",
+          "image_url": ["/img/fettuccine-alfredo.jpg"],
+          "ingredients": ["<li>226 grams fettuccine (- ½ pound)</li>",
+                          "<li>6 cups water</li>",
+                          "<li>1 to 1.5 teaspoons salt (or add as required)</li>",
+                          "<li>3 to 4 tablespoons Butter (- 30 grams, unsalted or salted)</li>",
+                          "<li>½ teaspoon garlic (- finely chopped)</li>"],
+          "method": ""
+        }
+];
 
 // let data = {
 //   "response": {
@@ -53,6 +86,7 @@ function handleSubmit(event) {
   
   // Get recipe name, ingredients, and method input values
   const nameInput = document.querySelector('#recipe-name');
+  const imageInput = document.querySelector('#image-name');
   const ingrInput = document.querySelector('#recipe-ingredients');
   const methodInput = document.querySelector('#recipe-method');
   const name = nameInput.value.trim();
@@ -60,13 +94,14 @@ function handleSubmit(event) {
   const method = methodInput.value.trim();
   
   // Check if recipe name, ingredients, and method are valid
-  if (name && ingredients.length > 0 && method) {
+  if (name && ingredients.length > 0 && imageInput && method) {
     // Create new recipe object and add it to recipes array
     const newRecipe = { name, ingredients, method };
     recipes.push(newRecipe);
     
     // Clear form inputs
     nameInput.value = '';
+    imageInput.value = '';
     ingrInput.value = '';
     methodInput.value = '';
     
@@ -83,6 +118,7 @@ function displayRecipes() {
 	// Create div to display the individual recipe, for each recipe
     recipeDiv.innerHTML = `
       <h3>${recipe.name}</h3>
+      <p><img src ="${recipe.image_url}" class="image-styles" /></p>
       <br/>
       <p><strong>Ingredients:</strong></p>
       <ul>
@@ -126,12 +162,17 @@ function search(query) {
     const recipeEl = document.createElement('div');
     recipeEl.innerHTML = `
       <h3>${recipe.name}</h3>
+      <p><img src ="${recipe.image_url}" class="image-styles" /></p>
+      <br/>
+      <br/>
       <p><strong>Ingredients:</strong></p>
       <ul>
         ${recipe.ingredients.map(ingr => `<li>${ingr}</li>`).join('')}
       </ul>
+      <br/>
       <p><strong>Method:</strong></p>
       <p>${recipe.method}</p>
+      <br/>
       <button class="delete-button" data-index="${recipes.indexOf(recipe)}">
 		Delete
 	  </button>`;
@@ -139,6 +180,8 @@ function search(query) {
     recipeList.appendChild(recipeEl);
   });
 }
+
+displayRecipes();
 
 // Add event listeners
 form.addEventListener('submit', handleSubmit);

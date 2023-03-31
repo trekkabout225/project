@@ -79,7 +79,7 @@ h2 {
 }
 
 .left-column {
-  width: 40%;
+  width: 20%;
   justify-content: flex-start;
 }
 
@@ -91,7 +91,7 @@ h2 {
 }
 
 .right-column {
-  width: 40%;
+  width: 70%;
   align-items: center;
   justify-content: flex-end;
 }
@@ -144,9 +144,14 @@ button[type="button"] {
 
 /* Styling for list of recipes */
 #recipe-list {
-  display: grid;
+  /* display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  grid-gap: 20px;
+  grid-gap: 20px; */
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 20px;
 }
 
 #no-recipes {
@@ -231,4 +236,16 @@ button[type="button"] {
     padding: 2px;
     opacity: 0.6;
     filter: alpha(opacity=60);
+}
+
+.fake-input {
+   position: relative; width:240px;
+}
+
+.fake-input input {
+   border:none; background-color:#fff; display:block; width: 100%; box-sizing: border-box 
+}
+
+.fake-input img {
+   position: absolute; top: 2px; right: 5px
 }

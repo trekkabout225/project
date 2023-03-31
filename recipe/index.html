@@ -13,7 +13,6 @@
       <nav>
         <ul>
           <li><a href="index.html">Home</a></li>
-          <li><a href="recipe-list.html">Recipes</a></li>
           <li><a href="contact.html">Suggest</a></li>
           <li><input class="nosubmit" type="text" id="search-box" /></li>
         </ul>
@@ -28,6 +27,14 @@
           <label for="recipe-name">Name: </label>
           <input type="text" id="recipe-name" required />
           <br />
+          <label for="avatar">Choose a picture: </label>
+
+          <input type="file" id="image-name" name="pasta-icon" accept="image/png, image/jpg" value="/img/pasta-icon.jpg">
+
+          <!-- <input type="hidden" id="image-name" name="pasta-icon" accept="image/png, image/jpg" value="/img/pasta-icon.jpg">
+          <img src="/img/pasta-icon.jpg" id="image-name"/> -->
+
+          <br/>
           <label for="recipe-ingredients">Ingredients: </label>
           <textarea id="recipe-ingredients" rows="5" required></textarea>
           <br />
